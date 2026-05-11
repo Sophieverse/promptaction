@@ -203,118 +203,59 @@ body {
     color: var(--text);
 }
 
-/* ── What section ─────────────────────────────── */
+/* ── Forms section ────────────────────────────── */
 
-.section-what {
+.section-forms {
     padding: 80px 0;
     border-top: 1px solid var(--border);
-    background: var(--bg-alt);
 }
 
-.two-col {
+.forms-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 48px;
+    gap: 32px;
+    align-items: start;
 }
 
-.what-block {
-    padding: 32px;
+.form-card {
     background: var(--bg-card);
     border: 1px solid var(--border);
-    border-radius: 12px;
+    border-radius: 16px;
+    padding: 36px;
 }
 
-.tag {
-    display: inline-block;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 12px;
-}
-
-.what-block h2 {
-    font-family: 'DM Serif Display', Georgia, serif;
-    font-size: 26px;
-    line-height: 1.2;
-    margin-bottom: 12px;
-    color: var(--text);
-}
-
-.what-block p {
-    color: var(--text-muted);
-    margin-bottom: 16px;
-}
-
-.what-block ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.what-block ul li {
-    color: var(--text-muted);
-    font-size: 15px;
-    padding-left: 20px;
-    position: relative;
-}
-
-.what-block ul li::before {
-    content: '→';
-    position: absolute;
-    left: 0;
-    color: var(--accent);
-}
-
-/* ── Form sections ────────────────────────────── */
-
-.section-form {
-    padding: 80px 0;
-    border-top: 1px solid var(--border);
-}
-
-.section-form-alt {
+.form-card-alt {
     background: var(--bg-alt);
 }
 
-.section-label {
-    font-size: 12px;
+.form-card-label {
+    font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--accent);
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
-.section-form h2 {
+.form-card h2 {
     font-family: 'DM Serif Display', Georgia, serif;
-    font-size: clamp(28px, 4vw, 42px);
-    line-height: 1.15;
+    font-size: 26px;
+    line-height: 1.2;
     letter-spacing: -0.01em;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
     color: var(--text);
 }
 
-.section-sub {
+.form-card-desc {
     color: var(--text-muted);
-    font-size: 17px;
-    max-width: 600px;
-    margin-bottom: 40px;
+    font-size: 14px;
     line-height: 1.7;
+    margin-bottom: 28px;
 }
 
 .signup-form {
-    max-width: 640px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-}
-
-.form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     gap: 16px;
 }
 
@@ -681,12 +622,7 @@ body {
         display: none;
     }
 
-    .two-col {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .form-row {
+    .forms-grid {
         grid-template-columns: 1fr;
     }
 
@@ -698,10 +634,9 @@ body {
         padding: 60px 0 56px;
     }
 
-    .section-form,
+    .section-forms,
     .section-orgs,
     .section-faq,
-    .section-what,
     .section-share {
         padding: 56px 0;
     }

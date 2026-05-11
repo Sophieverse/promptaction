@@ -47,147 +47,72 @@
         </div>
     </section>
 
-    <section class="section-what" id="what">
+    <section class="section-forms" id="working-group">
         <div class="container">
-            <div class="two-col">
-                <div class="what-block">
-                    <div class="tag">For Organizations</div>
-                    <h2>The AI Safety Working Group</h2>
-                    <p>A coordinating body for advocacy organizations working on AI policy — across the political spectrum.</p>
-                    <ul>
-                        <li>Joint statements with diverse, cross-partisan signatories</li>
-                        <li>Coordinated lobbying to avoid diluting collective impact</li>
-                        <li>Especially looking for orgs that don't already agree on everything — breadth of coalition is the point</li>
-                    </ul>
-                </div>
-                <div class="what-block">
-                    <div class="tag">For Individuals</div>
-                    <h2>Calls to Action</h2>
-                    <p>Targeted, timely nudges when your voice matters most.</p>
-                    <ul>
-                        <li>Call your representative to support specific AI safety bills</li>
-                        <li>Vote for candidates who take AI risk seriously</li>
-                        <li>Curated donation recommendations — orgs where marginal dollars make a real difference</li>
-                        <li>Location-aware: you'll only get CTAs relevant to your state / district</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+            <div class="forms-grid">
 
-    <section class="section-form" id="working-group">
-        <div class="container">
-            <div class="section-label">For Organizations</div>
-            <h2>Register Interest in the Working Group</h2>
-            <p class="section-sub">
-                We're building a diverse coalition of advocacy organizations committed to coordinating on AI safety policy.
-                Register your organization's interest below — we'll reach out when we have enough to convene.
-            </p>
-            <form action="https://formspree.io/f/YOUR_ORG_FORM_ID" method="POST" class="signup-form" id="org-form">
-                <input type="hidden" name="_subject" value="New Working Group Registration — PromptAction">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="org-name">Organization Name *</label>
-                        <input type="text" id="org-name" name="organization" required placeholder="e.g. Center for AI Safety">
-                    </div>
-                    <div class="form-group">
-                        <label for="org-type">Organization Type</label>
-                        <select id="org-type" name="org_type">
-                            <option value="">Select type...</option>
-                            <option>Nonprofit / Advocacy</option>
-                            <option>Think Tank / Research</option>
-                            <option>Academic Institution</option>
-                            <option>Industry / Company</option>
-                            <option>Government / Policy</option>
-                            <option>Other</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="contact-name">Your Name *</label>
-                        <input type="text" id="contact-name" name="contact_name" required placeholder="Your full name">
-                    </div>
-                    <div class="form-group">
-                        <label for="contact-role">Your Role</label>
-                        <input type="text" id="contact-role" name="contact_role" placeholder="e.g. Executive Director">
+                <div class="form-card" id="individuals">
+                    <div class="form-card-label">If you're an individual</div>
+                    <h2>Sign up for calls to action</h2>
+                    <p class="form-card-desc">We'll send you timely, specific things you can do — call your rep about a bill, donate to an org that needs it right now, vote for a candidate who cares. Low volume, high signal. No spam.</p>
+                    <form action="YOUR_APPS_SCRIPT_URL" method="POST" class="signup-form" id="ind-form">
+                        <input type="hidden" name="_subject" value="New Individual Signup — PromptAction">
+                        <div class="form-group">
+                            <label for="ind-name">Name</label>
+                            <input type="text" id="ind-name" name="name" placeholder="Your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="ind-email">Email *</label>
+                            <input type="email" id="ind-email" name="email" required placeholder="you@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="ind-phone">Phone (optional)</label>
+                            <input type="tel" id="ind-phone" name="phone" placeholder="+1 (555) 000-0000">
+                        </div>
+                        <div class="form-group">
+                            <label for="ind-location">State or country</label>
+                            <input type="text" id="ind-location" name="location" placeholder="e.g. California, UK">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Sign Me Up</button>
+                    </form>
+                    <div class="form-success hidden" id="ind-success">
+                        <div class="success-icon">✓</div>
+                        <h3>You're in.</h3>
+                        <p>We'll reach out when there's something meaningful to do.</p>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="org-email">Email Address *</label>
-                    <input type="email" id="org-email" name="email" required placeholder="you@organization.org">
-                </div>
-                <div class="form-group">
-                    <label for="org-focus">What's your organization's primary AI safety focus?</label>
-                    <textarea id="org-focus" name="focus" rows="3" placeholder="e.g. frontier model governance, biosecurity risk, democratic oversight..."></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="org-political">How would you describe your organization's political orientation?</label>
-                    <select id="org-political" name="political_orientation">
-                        <option value="">Select...</option>
-                        <option>Progressive / Left</option>
-                        <option>Centrist / Nonpartisan</option>
-                        <option>Conservative / Right</option>
-                        <option>Libertarian</option>
-                        <option>Single-issue / Hard to categorize</option>
-                        <option>Prefer not to say</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn btn-primary btn-full">Register Our Organization</button>
-            </form>
-            <div class="form-success hidden" id="org-success">
-                <div class="success-icon">✓</div>
-                <h3>You're on the list.</h3>
-                <p>We'll be in touch once we have enough organizations to convene. In the meantime, spread the word.</p>
-            </div>
-        </div>
-    </section>
 
-    <section class="section-form section-form-alt" id="individuals">
-        <div class="container">
-            <div class="section-label">For Individuals</div>
-            <h2>Sign Up for Calls to Action</h2>
-            <p class="section-sub">
-                Get notified when there's a concrete action you can take — calling your rep, supporting a bill, or
-                donating to an org doing critical work. We'll only contact you when it matters.
-            </p>
-            <form action="https://formspree.io/f/YOUR_IND_FORM_ID" method="POST" class="signup-form" id="ind-form">
-                <input type="hidden" name="_subject" value="New Individual Signup — PromptAction">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="ind-name">Your Name *</label>
-                        <input type="text" id="ind-name" name="name" required placeholder="Your name">
-                    </div>
-                    <div class="form-group">
-                        <label for="ind-email">Email Address *</label>
-                        <input type="email" id="ind-email" name="email" required placeholder="you@example.com">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="ind-state">State (US) or Country</label>
-                        <input type="text" id="ind-state" name="location" placeholder="e.g. California, UK, Canada">
-                    </div>
-                    <div class="form-group">
-                        <label for="ind-district">Congressional District (optional)</label>
-                        <input type="text" id="ind-district" name="district" placeholder="e.g. CA-16">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>What are you most interested in? (select all that apply)</label>
-                    <div class="checkbox-group">
-                        <label class="checkbox-label"><input type="checkbox" name="interest" value="call_reps"> Calling / writing representatives</label>
-                        <label class="checkbox-label"><input type="checkbox" name="interest" value="voting"> Voting guidance on AI-relevant candidates</label>
-                        <label class="checkbox-label"><input type="checkbox" name="interest" value="donations"> Donation recommendations</label>
-                        <label class="checkbox-label"><input type="checkbox" name="interest" value="volunteering"> Volunteering with orgs in the ecosystem</label>
+                <div class="form-card form-card-alt">
+                    <div class="form-card-label">If you're part of an organization</div>
+                    <h2>Register working group interest</h2>
+                    <p class="form-card-desc">We're building a cross-partisan coalition of advocacy orgs to coordinate on AI safety policy — joint statements, aligned lobbying, shared intelligence. We'll reach out once there's enough critical mass to convene.</p>
+                    <form action="YOUR_APPS_SCRIPT_URL" method="POST" class="signup-form" id="org-form">
+                        <input type="hidden" name="_subject" value="New Working Group Registration — PromptAction">
+                        <div class="form-group">
+                            <label for="contact-name">Your name *</label>
+                            <input type="text" id="contact-name" name="contact_name" required placeholder="Your full name">
+                        </div>
+                        <div class="form-group">
+                            <label for="org-name">Organization *</label>
+                            <input type="text" id="org-name" name="organization" required placeholder="e.g. Center for AI Safety">
+                        </div>
+                        <div class="form-group">
+                            <label for="org-email">Email *</label>
+                            <input type="email" id="org-email" name="email" required placeholder="you@organization.org">
+                        </div>
+                        <div class="form-group">
+                            <label for="org-phone">Phone (optional)</label>
+                            <input type="tel" id="org-phone" name="phone" placeholder="+1 (555) 000-0000">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Register Our Organization</button>
+                    </form>
+                    <div class="form-success hidden" id="org-success">
+                        <div class="success-icon">✓</div>
+                        <h3>You're on the list.</h3>
+                        <p>We'll be in touch once there's enough to convene.</p>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary btn-full">Sign Me Up</button>
-            </form>
-            <div class="form-success hidden" id="ind-success">
-                <div class="success-icon">✓</div>
-                <h3>You're in.</h3>
-                <p>We'll reach out when there's a meaningful action to take. No spam, no noise.</p>
+
             </div>
         </div>
     </section>

@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Formspree AJAX submission with success state swap
+    // Google Apps Script doesn't return readable responses cross-origin,
+    // so we use no-cors and optimistically show success on send.
     function setupForm(formId, successId) {
         const form = document.getElementById(formId);
         const success = document.getElementById(successId);
@@ -9,24 +10,22 @@ document.addEventListener('DOMContentLoaded', () => {
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
             const submitBtn = form.querySelector('[type="submit"]');
-            const originalText = submitBtn.textContent;
             submitBtn.textContent = 'Sending…';
             submitBtn.disabled = true;
 
+            const data = new FormData(form);
+            // Add a hidden field so the sheet knows which form this came from
+            data.append('form_type', formId);
+
             try {
-                const res = await fetch(form.action, {
+                await fetch(form.action, {
                     method: 'POST',
-                    body: new FormData(form),
-                    headers: { 'Accept': 'application/json' },
+                    mode: 'no-cors',
+                    body: data,
                 });
-                if (res.ok) {
-                    form.classList.add('hidden');
-                    success.classList.remove('hidden');
-                    success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                } else {
-                    submitBtn.textContent = 'Something went wrong — try again';
-                    submitBtn.disabled = false;
-                }
+                form.classList.add('hidden');
+                success.classList.remove('hidden');
+                success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             } catch {
                 submitBtn.textContent = 'Something went wrong — try again';
                 submitBtn.disabled = false;
