@@ -49,6 +49,37 @@
         <div class="container">
             <div class="forms-grid">
 
+                <div class="form-card">
+                    <div class="form-card-label">If you're part of an organization</div>
+                    <h2>Register working group interest</h2>
+                    <p class="form-card-desc">We're building a cross-partisan coalition of advocacy orgs to coordinate on AI safety policy — joint statements, aligned lobbying, shared intelligence. We'll reach out once there's enough critical mass to convene.</p>
+                    <form action="YOUR_APPS_SCRIPT_URL" method="POST" class="signup-form" id="org-form">
+                        <input type="hidden" name="_subject" value="New Working Group Registration — PromptAction">
+                        <div class="form-group">
+                            <label for="contact-name">Your name *</label>
+                            <input type="text" id="contact-name" name="contact_name" required placeholder="Your full name">
+                        </div>
+                        <div class="form-group">
+                            <label for="org-name">Organization *</label>
+                            <input type="text" id="org-name" name="organization" required placeholder="e.g. Center for AI Safety">
+                        </div>
+                        <div class="form-group">
+                            <label for="org-email">Email *</label>
+                            <input type="email" id="org-email" name="email" required placeholder="you@organization.org">
+                        </div>
+                        <div class="form-group">
+                            <label for="org-phone">Phone (optional)</label>
+                            <input type="tel" id="org-phone" name="phone" placeholder="+1 (555) 000-0000">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Register Our Organization</button>
+                    </form>
+                    <div class="form-success hidden" id="org-success">
+                        <div class="success-icon">✓</div>
+                        <h3>You're on the list.</h3>
+                        <p>We'll be in touch once there's enough to convene.</p>
+                    </div>
+                </div>
+
                 <div class="form-card" id="individuals">
                     <div class="form-card-label">If you're an individual</div>
                     <h2>Sign up for calls to action</h2>
@@ -80,37 +111,6 @@
                     </div>
                 </div>
 
-                <div class="form-card form-card-alt">
-                    <div class="form-card-label">If you're part of an organization</div>
-                    <h2>Register working group interest</h2>
-                    <p class="form-card-desc">We're building a cross-partisan coalition of advocacy orgs to coordinate on AI safety policy — joint statements, aligned lobbying, shared intelligence. We'll reach out once there's enough critical mass to convene.</p>
-                    <form action="YOUR_APPS_SCRIPT_URL" method="POST" class="signup-form" id="org-form">
-                        <input type="hidden" name="_subject" value="New Working Group Registration — PromptAction">
-                        <div class="form-group">
-                            <label for="contact-name">Your name *</label>
-                            <input type="text" id="contact-name" name="contact_name" required placeholder="Your full name">
-                        </div>
-                        <div class="form-group">
-                            <label for="org-name">Organization *</label>
-                            <input type="text" id="org-name" name="organization" required placeholder="e.g. Center for AI Safety">
-                        </div>
-                        <div class="form-group">
-                            <label for="org-email">Email *</label>
-                            <input type="email" id="org-email" name="email" required placeholder="you@organization.org">
-                        </div>
-                        <div class="form-group">
-                            <label for="org-phone">Phone (optional)</label>
-                            <input type="tel" id="org-phone" name="phone" placeholder="+1 (555) 000-0000">
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-full">Register Our Organization</button>
-                    </form>
-                    <div class="form-success hidden" id="org-success">
-                        <div class="success-icon">✓</div>
-                        <h3>You're on the list.</h3>
-                        <p>We'll be in touch once there's enough to convene.</p>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
@@ -119,7 +119,7 @@
     <section class="section-share">
         <div class="container">
             <div class="share-row">
-            <span class="share-label">Share:</span>
+            <span class="share-label">If you believe AI safety needs better coalition-building:</span>
             <div class="share-buttons">
                 <a href="https://twitter.com/intent/tweet?text=AI+policy+is+moving+fast+and+the+coalitions+shaping+it+are+still+forming.+PromptAction+is+building+cross-partisan+AI+safety+advocacy+infrastructure.+Register+interest+if+your+org+should+be+involved%3A+https%3A%2F%2Fpromptaction.org" target="_blank" rel="noopener" class="btn btn-share">Share on X / Twitter</a>
                 <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fpromptaction.org" target="_blank" rel="noopener" class="btn btn-share">Share on LinkedIn</a>
