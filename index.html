@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PromptAction — AI Safety, Together</title>
+    <meta name="description" content="Coordinating AI safety advocacy across organizations and individuals. Join the working group. Take action.">
+    <meta property="og:title" content="PromptAction — AI Safety, Together">
+    <meta property="og:description" content="Coordinating AI safety advocacy across organizations and individuals. Join the working group. Take action.">
+    <meta property="og:url" content="https://promptaction.org">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">PromptAction</div>
+            <nav>
+                <a href="#working-group">Working Group</a>
+                <a href="#individuals">Take Action</a>
+                <a href="#orgs">Donate / Volunteer</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-eyebrow">AI Safety Advocacy</div>
+            <h1>Coordinate. Advocate.<br><em>Prompt Action.</em></h1>
+            <p class="hero-sub">
+                AI policy is moving fast. The coalitions that shape it are still forming.
+                PromptAction brings together advocacy organizations across the political spectrum
+                — and connects individuals to concrete ways to push for a safer AI future.
+            </p>
+            <div class="hero-ctas">
+                <a href="#working-group" class="btn btn-primary">Join the Working Group</a>
+                <a href="#individuals" class="btn btn-secondary">Take Individual Action</a>
+            </div>
+            <p class="hero-note">
+                We'll only launch in earnest once there's enough traction — enough orgs registered, enough people signed up.
+                If you think AI safety needs better coalition-building, <strong>share this page.</strong>
+            </p>
+        </div>
+    </section>
+
+    <section class="section-what" id="what">
+        <div class="container">
+            <div class="two-col">
+                <div class="what-block">
+                    <div class="tag">For Organizations</div>
+                    <h2>The AI Safety Working Group</h2>
+                    <p>A coordinating body for advocacy organizations working on AI policy — across the political spectrum.</p>
+                    <ul>
+                        <li>Joint statements with diverse, cross-partisan signatories</li>
+                        <li>Coordinated lobbying to avoid diluting collective impact</li>
+                        <li>Especially looking for orgs that don't already agree on everything — breadth of coalition is the point</li>
+                    </ul>
+                </div>
+                <div class="what-block">
+                    <div class="tag">For Individuals</div>
+                    <h2>Calls to Action</h2>
+                    <p>Targeted, timely nudges when your voice matters most.</p>
+                    <ul>
+                        <li>Call your representative to support specific AI safety bills</li>
+                        <li>Vote for candidates who take AI risk seriously</li>
+                        <li>Curated donation recommendations — orgs where marginal dollars make a real difference</li>
+                        <li>Location-aware: you'll only get CTAs relevant to your state / district</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-form" id="working-group">
+        <div class="container">
+            <div class="section-label">For Organizations</div>
+            <h2>Register Interest in the Working Group</h2>
+            <p class="section-sub">
+                We're building a diverse coalition of advocacy organizations committed to coordinating on AI safety policy.
+                Register your organization's interest below — we'll reach out when we have enough to convene.
+            </p>
+            <form name="org-registration" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="signup-form" id="org-form">
+                <input type="hidden" name="form-name" value="org-registration">
+                <p class="hidden"><label>Don't fill this out: <input name="bot-field"></label></p>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="org-name">Organization Name *</label>
+                        <input type="text" id="org-name" name="organization" required placeholder="e.g. Center for AI Safety">
+                    </div>
+                    <div class="form-group">
+                        <label for="org-type">Organization Type</label>
+                        <select id="org-type" name="org_type">
+                            <option value="">Select type...</option>
+                            <option>Nonprofit / Advocacy</option>
+                            <option>Think Tank / Research</option>
+                            <option>Academic Institution</option>
+                            <option>Industry / Company</option>
+                            <option>Government / Policy</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="contact-name">Your Name *</label>
+                        <input type="text" id="contact-name" name="contact_name" required placeholder="Your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-role">Your Role</label>
+                        <input type="text" id="contact-role" name="contact_role" placeholder="e.g. Executive Director">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="org-email">Email Address *</label>
+                    <input type="email" id="org-email" name="email" required placeholder="you@organization.org">
+                </div>
+                <div class="form-group">
+                    <label for="org-focus">What's your organization's primary AI safety focus?</label>
+                    <textarea id="org-focus" name="focus" rows="3" placeholder="e.g. frontier model governance, biosecurity risk, democratic oversight..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="org-political">How would you describe your organization's political orientation?</label>
+                    <select id="org-political" name="political_orientation">
+                        <option value="">Select...</option>
+                        <option>Progressive / Left</option>
+                        <option>Centrist / Nonpartisan</option>
+                        <option>Conservative / Right</option>
+                        <option>Libertarian</option>
+                        <option>Single-issue / Hard to categorize</option>
+                        <option>Prefer not to say</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Register Our Organization</button>
+            </form>
+            <div class="form-success hidden" id="org-success">
+                <div class="success-icon">✓</div>
+                <h3>You're on the list.</h3>
+                <p>We'll be in touch once we have enough organizations to convene. In the meantime, spread the word.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-form section-form-alt" id="individuals">
+        <div class="container">
+            <div class="section-label">For Individuals</div>
+            <h2>Sign Up for Calls to Action</h2>
+            <p class="section-sub">
+                Get notified when there's a concrete action you can take — calling your rep, supporting a bill, or
+                donating to an org doing critical work. We'll only contact you when it matters.
+            </p>
+            <form name="individual-signup" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="signup-form" id="ind-form">
+                <input type="hidden" name="form-name" value="individual-signup">
+                <p class="hidden"><label>Don't fill this out: <input name="bot-field"></label></p>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="ind-name">Your Name *</label>
+                        <input type="text" id="ind-name" name="name" required placeholder="Your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="ind-email">Email Address *</label>
+                        <input type="email" id="ind-email" name="email" required placeholder="you@example.com">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="ind-state">State (US) or Country</label>
+                        <input type="text" id="ind-state" name="location" placeholder="e.g. California, UK, Canada">
+                    </div>
+                    <div class="form-group">
+                        <label for="ind-district">Congressional District (optional)</label>
+                        <input type="text" id="ind-district" name="district" placeholder="e.g. CA-16">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>What are you most interested in? (select all that apply)</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label"><input type="checkbox" name="interest" value="call_reps"> Calling / writing representatives</label>
+                        <label class="checkbox-label"><input type="checkbox" name="interest" value="voting"> Voting guidance on AI-relevant candidates</label>
+                        <label class="checkbox-label"><input type="checkbox" name="interest" value="donations"> Donation recommendations</label>
+                        <label class="checkbox-label"><input type="checkbox" name="interest" value="volunteering"> Volunteering with orgs in the ecosystem</label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Sign Me Up</button>
+            </form>
+            <div class="form-success hidden" id="ind-success">
+                <div class="success-icon">✓</div>
+                <h3>You're in.</h3>
+                <p>We'll reach out when there's a meaningful action to take. No spam, no noise.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-orgs" id="orgs">
+        <div class="container">
+            <div class="section-label">Where to Put Your Resources</div>
+            <h2>Orgs Worth Donating To &amp; Volunteering At</h2>
+            <p class="section-sub">
+                A personal curation — organizations in the AI safety ecosystem where marginal dollars and volunteer hours genuinely move the needle.
+            </p>
+
+            <div class="org-grid">
+
+                <div class="org-card">
+                    <div class="org-card-header">
+                        <h3>Center for AI Safety</h3>
+                        <span class="org-tag">Research &amp; Advocacy</span>
+                    </div>
+                    <p>Conducts safety research and works to reduce societal-scale risks from AI. Behind the one-sentence statement on AI risk signed by hundreds of leading researchers.</p>
+                    <div class="org-card-links">
+                        <a href="https://www.safe.ai" target="_blank" rel="noopener">safe.ai</a>
+                        <span class="org-action">Donate · Volunteer</span>
+                    </div>
+                </div>
+
+                <div class="org-card">
+                    <div class="org-card-header">
+                        <h3>AI Policy Institute</h3>
+                        <span class="org-tag">Policy</span>
+                    </div>
+                    <p>Nonpartisan research and advocacy focused on AI governance. Does polling, publishes policy briefs, and actively engages with Congressional staff.</p>
+                    <div class="org-card-links">
+                        <a href="https://theaipi.org" target="_blank" rel="noopener">theaipi.org</a>
+                        <span class="org-action">Donate</span>
+                    </div>
+                </div>
+
+                <div class="org-card">
+                    <div class="org-card-header">
+                        <h3>Apollo Research</h3>
+                        <span class="org-tag">Safety Research</span>
+                    </div>
+                    <p>Evaluates AI models for dangerous capabilities and deceptive behaviors. Does the kind of adversarial testing that AI labs need to be doing independently.</p>
+                    <div class="org-card-links">
+                        <a href="https://apolloresearch.ai" target="_blank" rel="noopener">apolloresearch.ai</a>
+                        <span class="org-action">Donate · Volunteer</span>
+                    </div>
+                </div>
+
+                <div class="org-card">
+                    <div class="org-card-header">
+                        <h3>Metr</h3>
+                        <span class="org-tag">Evaluations</span>
+                    </div>
+                    <p>Model evaluation and threat research organization — one of the few orgs doing independent evals of frontier models to assess dangerous capabilities.</p>
+                    <div class="org-card-links">
+                        <a href="https://metr.org" target="_blank" rel="noopener">metr.org</a>
+                        <span class="org-action">Donate</span>
+                    </div>
+                </div>
+
+                <div class="org-card">
+                    <div class="org-card-header">
+                        <h3>Founders Pledge</h3>
+                        <span class="org-tag">Effective Giving</span>
+                    </div>
+                    <p>Rigorous charity research including a dedicated AI safety fund. If you want expert guidance on high-impact AI safety giving, this is a good starting point.</p>
+                    <div class="org-card-links">
+                        <a href="https://founderspledge.com" target="_blank" rel="noopener">founderspledge.com</a>
+                        <span class="org-action">Donate</span>
+                    </div>
+                </div>
+
+                <div class="org-card org-card-placeholder">
+                    <div class="org-card-header">
+                        <h3>More coming soon</h3>
+                        <span class="org-tag">Curated</span>
+                    </div>
+                    <p>This list is personally curated. Sign up below to get updates as we add more recommendations — especially in biosecurity, democratic oversight, and international coordination.</p>
+                    <div class="org-card-links">
+                        <a href="#individuals">Get notified</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="section-faq" id="faq">
+        <div class="container">
+            <h2>Questions</h2>
+            <div class="faq-list">
+
+                <details class="faq-item">
+                    <summary>What does the AI Safety Working Group actually do?</summary>
+                    <p>
+                        The Working Group is a coordination layer for advocacy organizations. The core activities: joint statements signed by orgs across the political spectrum (breadth of coalition is the whole point), coordinated lobbying so organizations aren't working at cross-purposes, and shared intelligence on which legislative moments matter most.
+                        In a past life I worked on political depolarization — the design principle here is that a letter signed by both a progressive org and a conservative one is orders of magnitude more persuasive than fifty letters from orgs that all look the same.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Why does political diversity in the coalition matter?</summary>
+                    <p>
+                        AI safety is genuinely a cross-partisan issue — but most of the current advocacy infrastructure is concentrated in one part of the political spectrum. A conservative senator dismissing AI risk letters from progressive orgs is entirely predictable. A letter co-signed by orgs their constituents respect is not. Coalition breadth isn't just optics — it's the mechanism by which advocacy actually reaches the people who need to be moved.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>What kind of calls to action will individuals receive?</summary>
+                    <p>
+                        Timely, specific, high-signal actions only. Examples: if a key AI safety bill is coming to a vote and your representative is on the fence, we'll ask you to call their office with a specific script. If there's a candidate in a competitive race who has taken AI risk seriously, we'll flag it before the election. We'll also occasionally share donation asks — curated lists of orgs where your dollars are particularly useful at that moment. We won't spam you with things you can't influence.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>When will this actually launch?</summary>
+                    <p>
+                        We're treating this as a credible-commitment mechanism: we'll only launch the Working Group in earnest once enough organizations have registered interest to make it worth convening. Same for the individual CTA list — we'll wait until we have enough geographic coverage to run targeted campaigns. The goal is to launch with density, not trickle out with noise. That's why sharing this matters.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Who is behind PromptAction?</summary>
+                    <p>
+                        PromptAction is a project of <a href="https://humansover.ai" target="_blank" rel="noopener">humansover.ai</a>. The person behind it has worked on political depolarization and is concerned about the lack of coordinated, cross-partisan AI safety advocacy infrastructure in the US and internationally.
+                    </p>
+                </details>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="section-share">
+        <div class="container">
+            <h2>If you believe AI safety needs better coalition-building —</h2>
+            <p>This only works with numbers. Share it.</p>
+            <div class="share-buttons">
+                <a href="https://twitter.com/intent/tweet?text=AI+policy+is+moving+fast+and+the+coalitions+shaping+it+are+still+forming.+PromptAction+is+building+cross-partisan+AI+safety+advocacy+infrastructure.+Register+interest+if+your+org+should+be+involved%3A+https%3A%2F%2Fpromptaction.org" target="_blank" rel="noopener" class="btn btn-share">Share on X / Twitter</a>
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fpromptaction.org" target="_blank" rel="noopener" class="btn btn-share">Share on LinkedIn</a>
+                <button class="btn btn-share" id="copy-link">Copy Link</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div>
+                    <strong>PromptAction</strong> — a project of <a href="https://humansover.ai" target="_blank" rel="noopener">humansover.ai</a>
+                </div>
+                <div class="footer-links">
+                    <a href="mailto:hello@promptaction.org">hello@promptaction.org</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
