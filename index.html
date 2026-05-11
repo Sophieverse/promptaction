@@ -83,9 +83,8 @@
                 We're building a diverse coalition of advocacy organizations committed to coordinating on AI safety policy.
                 Register your organization's interest below — we'll reach out when we have enough to convene.
             </p>
-            <form name="org-registration" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="signup-form" id="org-form">
-                <input type="hidden" name="form-name" value="org-registration">
-                <p class="hidden"><label>Don't fill this out: <input name="bot-field"></label></p>
+            <form action="https://formspree.io/f/YOUR_ORG_FORM_ID" method="POST" class="signup-form" id="org-form">
+                <input type="hidden" name="_subject" value="New Working Group Registration — PromptAction">
                 <div class="form-row">
                     <div class="form-group">
                         <label for="org-name">Organization Name *</label>
@@ -152,9 +151,8 @@
                 Get notified when there's a concrete action you can take — calling your rep, supporting a bill, or
                 donating to an org doing critical work. We'll only contact you when it matters.
             </p>
-            <form name="individual-signup" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="signup-form" id="ind-form">
-                <input type="hidden" name="form-name" value="individual-signup">
-                <p class="hidden"><label>Don't fill this out: <input name="bot-field"></label></p>
+            <form action="https://formspree.io/f/YOUR_IND_FORM_ID" method="POST" class="signup-form" id="ind-form">
+                <input type="hidden" name="_subject" value="New Individual Signup — PromptAction">
                 <div class="form-row">
                     <div class="form-group">
                         <label for="ind-name">Your Name *</label>

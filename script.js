@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Netlify form handling with success state swap
+    // Formspree AJAX submission with success state swap
     function setupForm(formId, successId) {
         const form = document.getElementById(formId);
         const success = document.getElementById(successId);
@@ -8,22 +8,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
-            const data = new FormData(form);
+            const submitBtn = form.querySelector('[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending…';
+            submitBtn.disabled = true;
+
             try {
-                const res = await fetch('/', {
+                const res = await fetch(form.action, {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                    body: new URLSearchParams(data).toString(),
+                    body: new FormData(form),
+                    headers: { 'Accept': 'application/json' },
                 });
                 if (res.ok) {
                     form.classList.add('hidden');
                     success.classList.remove('hidden');
                     success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
                 } else {
-                    form.querySelector('[type="submit"]').textContent = 'Something went wrong — try again';
+                    submitBtn.textContent = 'Something went wrong — try again';
+                    submitBtn.disabled = false;
                 }
             } catch {
-                form.querySelector('[type="submit"]').textContent = 'Something went wrong — try again';
+                submitBtn.textContent = 'Something went wrong — try again';
+                submitBtn.disabled = false;
             }
         });
     }
@@ -46,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Smooth active nav highlighting on scroll
+    // Active nav highlighting on scroll
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.site-header nav a');
 
