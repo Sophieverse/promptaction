@@ -560,14 +560,15 @@ body {
 
 .share-row {
     display: flex;
-    align-items: center;
-    gap: 16px;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
 }
 
 .share-label {
-    font-size: 15px;
-    font-weight: 600;
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: clamp(22px, 3vw, 32px);
+    line-height: 1.2;
     color: var(--text);
 }
 
