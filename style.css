@@ -312,6 +312,17 @@ body {
     margin-bottom: 28px;
 }
 
+.form-card-desc a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(74, 158, 255, 0.3);
+    transition: border-color 0.15s;
+}
+
+.form-card-desc a:hover {
+    border-color: var(--accent);
+}
+
 .signup-form {
     display: flex;
     flex-direction: column;
