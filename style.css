@@ -203,6 +203,64 @@ body {
     color: var(--text);
 }
 
+/* ── Why section ─────────────────────────────── */
+
+.section-why {
+    padding: 72px 0;
+    border-top: 1px solid var(--border);
+    background: var(--bg-alt);
+}
+
+.section-why .container {
+    max-width: 740px;
+}
+
+.why-lead {
+    font-size: 19px;
+    line-height: 1.7;
+    color: var(--text);
+    margin-bottom: 24px;
+}
+
+.why-intro {
+    font-size: 17px;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+.why-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.why-list li {
+    font-size: 16px;
+    color: var(--text);
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.6;
+}
+
+.why-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+}
+
+.section-why a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(74, 158, 255, 0.3);
+    transition: border-color 0.15s;
+}
+
+.section-why a:hover {
+    border-color: var(--accent);
+}
+
 /* ── Forms section ────────────────────────────── */
 
 .section-forms {
