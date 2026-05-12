@@ -223,8 +223,9 @@ body {
 }
 
 .why-intro {
-    font-size: 17px;
-    color: var(--text-muted);
+    font-size: 19px;
+    line-height: 1.7;
+    color: var(--text);
     margin-bottom: 20px;
 }
 
