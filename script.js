@@ -13,15 +13,16 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.textContent = 'Sending…';
             submitBtn.disabled = true;
 
-            const data = new FormData(form);
-            // Add a hidden field so the sheet knows which form this came from
-            data.append('form_type', formId);
+            const formData = new FormData(form);
+            formData.append('form_type', formId);
+            const encoded = new URLSearchParams(formData).toString();
 
             try {
                 await fetch(form.action, {
                     method: 'POST',
                     mode: 'no-cors',
-                    body: data,
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: encoded,
                 });
                 form.classList.add('hidden');
                 success.classList.remove('hidden');
