@@ -561,7 +561,8 @@ body {
 .share-row {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
     gap: 20px;
 }
 
@@ -588,12 +589,12 @@ body {
 
 .footer-inner {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    text-align: center;
     font-size: 14px;
     color: var(--text-muted);
-    gap: 8px;
+    gap: 16px;
+    flex-wrap: wrap;
 }
 
 .footer-inner strong {
