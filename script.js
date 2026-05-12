@@ -1,41 +1,33 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Google Apps Script doesn't return readable responses cross-origin,
-    // so we use no-cors and optimistically show success on send.
-    function setupForm(formId, successId) {
+    // Hidden iframe submission — most reliable approach for Google Apps Script.
+    // The form posts into a hidden iframe; when the iframe loads the response,
+    // we swap in the success state.
+    function setupForm(formId, successId, iframeName) {
         const form = document.getElementById(formId);
         const success = document.getElementById(successId);
-        if (!form || !success) return;
+        const iframe = document.querySelector(`iframe[name="${iframeName}"]`);
+        if (!form || !success || !iframe) return;
 
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
+        let submitted = false;
+
+        form.addEventListener('submit', () => {
+            submitted = true;
             const submitBtn = form.querySelector('[type="submit"]');
             submitBtn.textContent = 'Sending…';
             submitBtn.disabled = true;
+        });
 
-            const formData = new FormData(form);
-            formData.append('form_type', formId);
-            const encoded = new URLSearchParams(formData).toString();
-
-            try {
-                await fetch(form.action, {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                    body: encoded,
-                });
-                form.classList.add('hidden');
-                success.classList.remove('hidden');
-                success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            } catch {
-                submitBtn.textContent = 'Something went wrong — try again';
-                submitBtn.disabled = false;
-            }
+        iframe.addEventListener('load', () => {
+            if (!submitted) return;
+            form.classList.add('hidden');
+            success.classList.remove('hidden');
+            success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         });
     }
 
-    setupForm('org-form', 'org-success');
-    setupForm('ind-form', 'ind-success');
+    setupForm('org-form', 'org-success', 'org-form-target');
+    setupForm('ind-form', 'ind-success', 'ind-form-target');
 
     // Copy link button
     const copyBtn = document.getElementById('copy-link');

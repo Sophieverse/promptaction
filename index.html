@@ -64,8 +64,8 @@
                     <div class="form-card-label">If you're part of an organization</div>
                     <h2>Register working group interest</h2>
                     <p class="form-card-desc">If you represent an advocacy organization, we're building <strong>a working group to coordinate efforts on AI policy</strong>. Concretely, this means writing and releasing joint statements, developing shared strategy, and building cross-coalition credibility to persuade legislators across the political spectrum. We'll reach out once there's enough critical mass to convene.</p>
-                    <form action="https://script.google.com/macros/s/AKfycbzGsQX-1Z3248HU1dx1091zvTqfz7CFVe5bNOuktfGDcfdDPNaOjkoGHGYTk5CEPC-FDA/exec" method="POST" class="signup-form" id="org-form">
-                        <input type="hidden" name="_subject" value="New Working Group Registration — PromptAction">
+                    <form action="https://script.google.com/macros/s/AKfycbzGsQX-1Z3248HU1dx1091zvTqfz7CFVe5bNOuktfGDcfdDPNaOjkoGHGYTk5CEPC-FDA/exec" method="POST" class="signup-form" id="org-form" target="org-form-target">
+                        <input type="hidden" name="form_type" value="org-form">
                         <div class="form-group">
                             <label for="contact-name">Your name *</label>
                             <input type="text" id="contact-name" name="contact_name" required placeholder="Your full name">
@@ -95,8 +95,8 @@
                     <div class="form-card-label">If you're an individual</div>
                     <h2>Sign up for calls to action</h2>
                     <p class="form-card-desc">Sign up for AI Action Alerts, and we'll send you timely, specific things you can do — <a href="https://thecounterfactual.substack.com/p/s3741-and-the-art-of-not-dying-of" target="_blank" rel="noopener">call your rep about a bill</a>, <a href="https://thecounterfactual.substack.com/p/donate-less-to-ai-safety" target="_blank" rel="noopener">donate to an org</a> that needs it right now, vote for a candidate who cares. You can unsubscribe at any time.</p>
-                    <form action="https://script.google.com/macros/s/AKfycbzGsQX-1Z3248HU1dx1091zvTqfz7CFVe5bNOuktfGDcfdDPNaOjkoGHGYTk5CEPC-FDA/exec" method="POST" class="signup-form" id="ind-form">
-                        <input type="hidden" name="_subject" value="New Individual Signup — PromptAction">
+                    <form action="https://script.google.com/macros/s/AKfycbzGsQX-1Z3248HU1dx1091zvTqfz7CFVe5bNOuktfGDcfdDPNaOjkoGHGYTk5CEPC-FDA/exec" method="POST" class="signup-form" id="ind-form" target="ind-form-target">
+                        <input type="hidden" name="form_type" value="ind-form">
                         <div class="form-group">
                             <label for="ind-name">Name</label>
                             <input type="text" id="ind-name" name="name" placeholder="Your name">
@@ -152,6 +152,8 @@
         </div>
     </footer>
 
+    <iframe name="org-form-target" style="display:none"></iframe>
+    <iframe name="ind-form-target" style="display:none"></iframe>
     <script src="script.js"></script>
 </body>
 </html>
