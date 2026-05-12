@@ -192,6 +192,13 @@ body {
     margin-bottom: 28px;
 }
 
+.cta-mobile { display: none; }
+
+@media (max-width: 768px) {
+    .cta-desktop { display: none; }
+    .cta-mobile { display: inline-block; }
+}
+
 .hero-note {
     font-size: 14px;
     color: var(--text-muted);
